@@ -1,22 +1,54 @@
 {
-  "name": "allyourrecipes",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "web2",
+  "version": "1.1.0",
+  "description": "Nuxt.js project",
+  "author": "cavejay <michael@sablecliff.com>",
+  "private": true,
   "scripts": {
-    "dev": "nuxt"
+    "dev": "pwsh ./runProj.ps1",
+    "devweb": "backpack dev",
+    "devbatch": "nodemon -w ./server_batch/** -w ./server_shared/** ./server_batch/index.js",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "docker": "docker build . --tag talking-puppet",
+    "testdocker": "docker run -p 8080:80 --name tp --rm talking-puppet:latest",
+    "pushdocker": "docker push talkingpuppet.azurecr.io/talking-puppet",
+    "cleandocker": "docker kill tp"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cavejay/allyourrecipes.git"
-  },
-  "author": "Cavejay",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cavejay/allyourrecipes/issues"
-  },
-  "homepage": "https://github.com/cavejay/allyourrecipes",
   "dependencies": {
-    "nuxt": "^2.4.5"
+    "@nuxtjs/axios": "^5.3.1",
+    "ajv": "^6.5.3",
+    "axios-cache-plugin": "^0.1.0",
+    "buefy": "^0.6.6",
+    "cottage": "^3.0.1",
+    "debounce-async": "0.0.2",
+    "koa": "^2.4.1",
+    "koa-better-body": "^3.0.4",
+    "koa-bodyparser": "^4.2.0",
+    "koa-mount": "^3.0.0",
+    "lodash.debounce": "^4.0.8",
+    "nedb-promise": "^2.0.1",
+    "nuxt": "latest",
+    "nuxt-buefy": "0.0.4",
+    "nuxt-env": "0.0.3",
+    "pino": "^4.16.1",
+    "source-map-support": "^0.4.15"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "babel-eslint": "^7.1.1",
+    "backpack-core": "^0.3.0",
+    "eslint": "^3.13.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.11.0",
+    "scmp": "^2.0.0"
   }
 }
