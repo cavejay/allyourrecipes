@@ -1,6 +1,6 @@
 // const mqtt = require("mqtt");
 const p = require("../server_shared/loggerFactory")("index");
-const apiInstaller = require("./lib/api.js");
+const apiInstaller = require("../server/lib/api.js");
 
 const Cottage = require("cottage");
 const bodyParser = require("koa-bodyparser");

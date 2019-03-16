@@ -1,22 +1,11 @@
 var pino = require("pino");
-var pretty = pino.pretty();
-pretty.pipe(process.stdout);
-// var p = pino(
-//   {
-//     name: "app",
-//     safe: true
-//   },
-//   pretty
-// );
 
 module.exports = function(instanceName) {
-    return pino(
-        {
-            name: instanceName,
-            safe: true
-        },
-        pretty
-    );
+  return pino({
+    name: instanceName,
+    prettyPrint: false, //true
+    level: "trace" // need to make this configurable
+  });
 };
 
 // consider consola

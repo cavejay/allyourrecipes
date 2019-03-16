@@ -25,40 +25,20 @@ const apiFactory = (_axios, clientURL) => {
     async wordslistfull() {
       let { data } = await axios.get("/api/words/list/full");
       return data;
-    },
-    // request and cache this request
-    async getwordslist() {
-      // todo if wordslistfull has been cached then process that output rather than requesting it again
-      let { data } = await axios.get("/api/words/list");
-      return data;
-    },
-    // request and cache this request.
-    async getwordsafter(word) {
-      let { data } = await axios.get("/api/words/after/" + word);
-      return data;
-    },
-    // send off a request to create a particular video
-    async makeVideoRequest(sentence) {
-      let { data, status } = await axios.post("/api/video", {
-        sentence: sentence
-      });
-      console.log(status, data);
-      return data;
     }
   };
 };
 
 /*
-** From: https://github.com/nuxt-community/axios-module/issues/101#issuecomment-365909923
-** Executed by ~/.nuxt/index.js with context given
-** This method can be asynchronous
-*/
+ ** From: https://github.com/nuxt-community/axios-module/issues/101#issuecomment-365909923
+ ** Executed by ~/.nuxt/index.js with context given
+ ** This method can be asynchronous
+ */
 export default ({ $axios, app }, inject) => {
   // Inject `api` key
   // -> app.$api
   // -> this.$api in vue components
   // -> this.$api in store actions/mutations
-  console.log("look at that. This is what the env var looks like:");
   console.log(app.$env);
   const api = process.client
     ? apiFactory($axios, app.$env.CLIENT_URL || "http://localhost:3000")
