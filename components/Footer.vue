@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <nav class="content has-text-centered">
-        Github@cavejay
+      Github@cavejay
     </nav>
   </footer>
 </template>

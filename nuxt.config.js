@@ -3,8 +3,8 @@ module.exports = {
     baseUrl: process.env.BASE_URL || "http://localhost:3000"
   },
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "Talking-Puppet",
     meta: [
@@ -15,12 +15,12 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
-  ** Plugins
-  */
+   ** Plugins
+   */
   plugins: ["~plugins/api.js"],
   /*
-  ** Modules for use in the app
-  */
+   ** Modules for use in the app
+   */
   modules: [
     // Awesome CSS
     "nuxt-buefy",
@@ -33,23 +33,24 @@ module.exports = {
     ]
   ],
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ["~assets/css/main.css"],
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: "#3B8070" },
   /*
    ** Build configuration
    */
   build: {
     vendor: ["axios-cache-plugin"],
+
     /*
      ** Run ESLINT on save
      */
     extend(config, ctx) {
-      if (ctx.isClient) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: "pre",
           test: /\.(js|vue)$/,
