@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container has-navbar-fixed-top">
     <MyHeader></MyHeader>
     <nuxt />
     <MyFooter></MyFooter>
