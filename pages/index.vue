@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <section class="hero is-info is-large">
+  <section class="">
+    <div class="hero is-info is-large">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -12,15 +12,15 @@
           </h2>
         </div>
       </div>
-    </section>
-    <section class="hero is-success is-large">
+    </div>
+    <div class="hero is-success is-large">
       <div class="hero-body">
         <div class="container">
           This is another bit with other stuff in it
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <style scoped></style>

@@ -15,6 +15,8 @@ I like my recipes consistent and re-writing them has been helpful for this.
 
 ## Feature Checklist
 
+https://github.com/ax2inc/nuxt-modules/tree/master/packages/lozad
+
 - [ ]
 - [ ]
 - [ ]

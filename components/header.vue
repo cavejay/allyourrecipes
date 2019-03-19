@@ -1,17 +1,17 @@
 <template>
   <nav
-    class="navbar is-fixed-top"
+    class="navbar is-fixed-top is-primary"
     role="navigation"
     aria-label="main navigation"
   >
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://localhost:3000">
+      <nuxt-link class="navbar-item" to="/">
         <img
           src="~/assets/img/Aybabtu.small.png"
           alt="allyourbase"
           width="28"
         />
-      </a>
+      </nuxt-link>
 
       <a
         role="button"
@@ -28,26 +28,38 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <nuxt-link class="navbar-item" to="/">
           Home
-        </a>
-
+        </nuxt-link>
         <a class="navbar-item">
-          Search (Put a search thing here)
+          <b-field>
+            <b-input
+              placeholder="Search..."
+              type="search"
+              icon="magnify"
+              custom-class="is-rounded"
+            >
+            </b-input>
+            <!-- <p class="control">
+              <button class="button is-primary ">Search</button>
+            </p> -->
+          </b-field>
         </a>
-
+        <nuxt-link class="navbar-item" to="/browse">
+          Browse
+        </nuxt-link>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
+            <nuxt-link class="navbar-item" to="/about">
               About
-            </a>
-            <a class="navbar-item">
+            </nuxt-link>
+            <nuxt-link class="navbar-item" to="/contact">
               Contact
-            </a>
+            </nuxt-link>
             <hr class="navbar-divider" />
             <a
               href="https://github.com/cavejay/allyourrecipes/issues/new"
@@ -57,6 +69,9 @@
             </a>
           </div>
         </div>
+        <nuxt-link class="navbar-item" to="/recipes/new">
+          New Recipe
+        </nuxt-link>
       </div>
 
       <div class="navbar-end">
