@@ -104,6 +104,11 @@
 
 <script>
 export default {
+  head: {
+    bodyAttrs: {
+      class: "has-navbar-fixed-top"
+    }
+  },
   mounted() {
     if (process.browser) {
       window.onNuxtReady(() => {

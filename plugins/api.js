@@ -22,8 +22,8 @@ const apiFactory = (_axios, clientURL) => {
 
   return {
     // request and cache this list.
-    async wordslistfull() {
-      let { data } = await axios.get("/api/words/list/full");
+    async getRecipeTemplate() {
+      let { data } = await axios.get("/api/recipe/template");
       return data;
     }
   };

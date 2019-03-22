@@ -19,6 +19,8 @@ function apiInstaller(app) {
 
   app.get("/api/words/", async () => "api end point");
 
+  app.get("/api/recipe/template", async () => require("../recipeTemplate.js"));
+
   p.info("API Hooks configured");
   return app;
 }

@@ -17,14 +17,19 @@ I like my recipes consistent and re-writing them has been helpful for this.
 
 https://github.com/ax2inc/nuxt-modules/tree/master/packages/lozad
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+https://github.com/robinvdvleuten/vuex-persistedstate
+
+https://github.com/xanf/vuex-shared-mutations
+
+- [ ] Simple Recipe Creator
+- [ ] Simple storage of Recipes
+- [ ] Simple Viewing of a single recipe
+- [ ] Simple Listing of recipes
+- [ ] Simple Login
+- [ ] Simple Recipe protection
+- [ ] Review Recipe Viewing (ingredient processing and viewing)
+- [ ] Simple Search
+- [ ] 
 - [ ]
 - [ ]
 

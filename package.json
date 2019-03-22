@@ -22,6 +22,7 @@
     "ajv": "^6.5.3",
     "axios-cache-plugin": "^0.1.0",
     "buefy": "^0.7.3",
+    "common-tags": "^1.8.0",
     "cottage": "^3.0.1",
     "debounce-async": "0.0.2",
     "koa": "^2.4.1",
@@ -29,12 +30,14 @@
     "koa-bodyparser": "^4.2.0",
     "koa-mount": "^4.0.0",
     "lodash.debounce": "^4.0.8",
+    "markdown-it": "^8.4.2",
     "nedb-promise": "^2.0.1",
     "nuxt": "^2.4.5",
     "nuxt-buefy": "^0.3.4",
     "nuxt-env": "^0.1.0",
     "pino": "^5.11.1",
-    "source-map-support": "^0.4.15"
+    "source-map-support": "^0.4.15",
+    "tiptap": "^1.14.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
