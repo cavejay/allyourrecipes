@@ -1,6 +1,7 @@
 // const mqtt = require("mqtt");
 const p = require("../server_shared/loggerFactory")("index");
 const apiInstaller = require("../server/lib/api.js");
+const graphqlInstaller = require("../server/lib/graphql.js");
 
 const Cottage = require("cottage");
 const bodyParser = require("koa-bodyparser");
@@ -20,6 +21,9 @@ app.use(bodyParser());
   // Pass it to the APIinit function
   // This could probably be another Koa app that's mounted on /api. Would make more sense later.
   app = apiInstaller(app); // probably don't need to return it
+
+  // Also setup the graphql endpoint 'cause plz
+  app = graphqlInstaller(app);
 
   // do the NuxtStuff
   await nuxtInstaller(app);

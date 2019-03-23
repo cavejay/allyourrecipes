@@ -1,18 +1,20 @@
-// const Datastore = require("nedb");
-const Datastore = require("nedb-promise");
 const p = require("../../server_shared/loggerFactory")("Database");
+const { db } = require("../../config");
 
-// todo should pass in the process.env.dbFile
-let db = {};
-db.raw = new Datastore({
-  filename: process.env.dbFile || "./TalkingPuppetDB.db",
-  autoload: true
-});
+const mongoose = require("mongoose");
 
-db.getWord = async function(id) {
-  p.info(`attempting to fetch word by id: ${id}`);
-  const res = await db.raw.findOne({ _id: id });
-  return res;
+const initDB = () => {
+  const con = `mongodb://${db.user}:${db.password}@${db.address}:${
+    db.port
+  }/allyourrecipes`;
+  p.info(`Attempting connection to: ${con}`);
+  mongoose.connect(con, {
+    useNewUrlParser: true
+  });
+
+  mongoose.connection.once("open", () => {
+    p.info("connected to database");
+  });
 };
 
-module.exports = db;
+module.exports = initDB;
